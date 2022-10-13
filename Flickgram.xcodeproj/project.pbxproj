@@ -14,6 +14,10 @@
 		ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */; };
 		ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61A28F89F6A0079F30A /* Assets.xcassets */; };
 		ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */; };
+		ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */; };
+		ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F62E28F8A1D70079F30A /* FirebaseAuth */; };
+		ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63028F8A1D70079F30A /* FirebaseFirestore */; };
+		ABC6F63328F8A1D70079F30A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,7 @@
 		ABC6F61A28F89F6A0079F30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABC6F61D28F89F6A0079F30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC6F61F28F89F6A0079F30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +38,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC6F63328F8A1D70079F30A /* FirebaseRemoteConfig in Frameworks */,
+				ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */,
+				ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB3EFD3928F8B301006DA177 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F63428F8AE900079F30A /* Plists */,
+				ABC6F63728F8AF0D0079F30A /* Assets */,
+				ABC6F63828F8AF1B0079F30A /* View */,
+				ABC6F63628F8AEF70079F30A /* Delegate */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AB3EFD3A28F8B351006DA177 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F61228F89F680079F30A /* ViewController.swift */,
+				ABC6F61428F89F680079F30A /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		ABC6F60228F89F680079F30A = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +86,45 @@
 		ABC6F60D28F89F680079F30A /* Flickgram */ = {
 			isa = PBXGroup;
 			children = (
-				ABC6F60E28F89F680079F30A /* AppDelegate.swift */,
-				ABC6F61028F89F680079F30A /* SceneDelegate.swift */,
-				ABC6F61228F89F680079F30A /* ViewController.swift */,
-				ABC6F61428F89F680079F30A /* Main.storyboard */,
-				ABC6F61A28F89F6A0079F30A /* Assets.xcassets */,
-				ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */,
-				ABC6F61F28F89F6A0079F30A /* Info.plist */,
+				AB3EFD3928F8B301006DA177 /* App */,
+				AB3EFD3A28F8B351006DA177 /* Screens */,
 				ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */,
 			);
 			path = Flickgram;
+			sourceTree = "<group>";
+		};
+		ABC6F63428F8AE900079F30A /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F61F28F89F6A0079F30A /* Info.plist */,
+				ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		ABC6F63628F8AEF70079F30A /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F60E28F89F680079F30A /* AppDelegate.swift */,
+				ABC6F61028F89F680079F30A /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		ABC6F63728F8AF0D0079F30A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F61A28F89F6A0079F30A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		ABC6F63828F8AF1B0079F30A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +143,11 @@
 			dependencies = (
 			);
 			name = Flickgram;
+			packageProductDependencies = (
+				ABC6F62E28F8A1D70079F30A /* FirebaseAuth */,
+				ABC6F63028F8A1D70079F30A /* FirebaseFirestore */,
+				ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */,
+			);
 			productName = Flickgram;
 			productReference = ABC6F60B28F89F680079F30A /* Flickgram.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +176,9 @@
 				Base,
 			);
 			mainGroup = ABC6F60228F89F680079F30A;
+			packageReferences = (
+				ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = ABC6F60C28F89F680079F30A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
+				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 				ABC6F61628F89F680079F30A /* Main.storyboard in Resources */,
 			);
@@ -293,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flickgram/Info.plist;
+				INFOPLIST_FILE = Flickgram/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +387,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flickgram/Info.plist;
+				INFOPLIST_FILE = Flickgram/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,6 +428,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABC6F62E28F8A1D70079F30A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		ABC6F63028F8A1D70079F30A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */ = {
