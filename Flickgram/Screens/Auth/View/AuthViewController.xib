@@ -56,15 +56,16 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BEA-6s-NdO">
-                    <rect key="frame" x="154" y="529.66666666666663" width="82" height="40.333333333333371"/>
+                    <rect key="frame" x="120" y="529.66666666666663" width="150" height="40.333333333333371"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKE-vf-VNX">
-                            <rect key="frame" x="0.0" y="0.0" width="82" height="40.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="40.333333333333336"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                             <color key="tintColor" systemColor="systemGreenColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Login">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                             </buttonConfiguration>
                         </button>
                     </subviews>
@@ -75,15 +76,15 @@
             <constraints>
                 <constraint firstItem="XPc-zL-9tI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="92" id="61u-uw-Meh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ubk-rD-AI2" secondAttribute="trailing" constant="72" id="67e-a5-Jql"/>
-                <constraint firstItem="BEA-6s-NdO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="154" id="7oz-4H-de7"/>
                 <constraint firstItem="BEA-6s-NdO" firstAttribute="top" secondItem="ubk-rD-AI2" secondAttribute="bottom" constant="48" id="Kxf-Y8-svu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BEA-6s-NdO" secondAttribute="trailing" constant="120" id="Q34-hs-YQL"/>
                 <constraint firstItem="ubk-rD-AI2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="72" id="Q7Q-GW-YXo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XPc-zL-9tI" secondAttribute="trailing" constant="92" id="R7H-SI-5wO"/>
                 <constraint firstItem="Xwn-7s-FzF" firstAttribute="centerX" secondItem="XPc-zL-9tI" secondAttribute="centerX" id="Ray-gE-VYz"/>
                 <constraint firstItem="BEA-6s-NdO" firstAttribute="top" secondItem="ubk-rD-AI2" secondAttribute="bottom" constant="48" id="VnD-3M-1MY"/>
                 <constraint firstItem="XPc-zL-9tI" firstAttribute="top" secondItem="Xwn-7s-FzF" secondAttribute="bottom" constant="80" id="btr-Ev-ohi"/>
+                <constraint firstItem="BEA-6s-NdO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="120" id="cgs-KC-HPW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BEA-6s-NdO" secondAttribute="bottom" constant="240" id="isx-kY-dtd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BEA-6s-NdO" secondAttribute="trailing" constant="154" id="qCd-2v-JVj"/>
                 <constraint firstItem="ubk-rD-AI2" firstAttribute="top" secondItem="XPc-zL-9tI" secondAttribute="bottom" constant="56" id="tx2-b0-w8O"/>
                 <constraint firstItem="ubk-rD-AI2" firstAttribute="top" secondItem="XPc-zL-9tI" secondAttribute="bottom" constant="56" id="vC3-6j-uLd"/>
             </constraints>
