@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB3EFD3D28F9383F006DA177 /* Moya */; };
+		AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EFD4028F98119006DA177 /* AuthViewController.swift */; };
+		AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB71112228F981A100F348B6 /* AuthViewController.xib */; };
 		ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F60E28F89F680079F30A /* AppDelegate.swift */; };
 		ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */; };
 		ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61A28F89F6A0079F30A /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB3EFD4028F98119006DA177 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		AB71112228F981A100F348B6 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		ABC6F60B28F89F680079F30A /* Flickgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC6F60E28F89F680079F30A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC6F61828F89F680079F30A /* Flickgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flickgram.xcdatamodel; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB3E4A6B28F9817C00C74586 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB71112228F981A100F348B6 /* AuthViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AB3EFD3928F8B301006DA177 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +77,18 @@
 		AB3EFD3F28F94286006DA177 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				AB3E4A6B28F9817C00C74586 /* View */,
+				AB71112428F981D600F348B6 /* Controller */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		AB71112428F981D600F348B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB3EFD4028F98119006DA177 /* AuthViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		ABC6F60228F89F680079F30A = {
@@ -197,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
+				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 			);
@@ -210,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
+				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +380,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -390,7 +413,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
