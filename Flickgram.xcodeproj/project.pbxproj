@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB3EFD3D28F9383F006DA177 /* Moya */; };
 		ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F60E28F89F680079F30A /* AppDelegate.swift */; };
-		ABC6F61328F89F680079F30A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61228F89F680079F30A /* ViewController.swift */; };
-		ABC6F61628F89F680079F30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61428F89F680079F30A /* Main.storyboard */; };
 		ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */; };
 		ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61A28F89F6A0079F30A /* Assets.xcassets */; };
 		ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */; };
@@ -23,8 +21,6 @@
 /* Begin PBXFileReference section */
 		ABC6F60B28F89F680079F30A /* Flickgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC6F60E28F89F680079F30A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABC6F61228F89F680079F30A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ABC6F61528F89F680079F30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABC6F61828F89F680079F30A /* Flickgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flickgram.xcdatamodel; sourceTree = "<group>"; };
 		ABC6F61A28F89F6A0079F30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABC6F61D28F89F6A0079F30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,10 +57,16 @@
 		AB3EFD3A28F8B351006DA177 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				ABC6F61228F89F680079F30A /* ViewController.swift */,
-				ABC6F61428F89F680079F30A /* Main.storyboard */,
+				AB3EFD3F28F94286006DA177 /* Auth */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		AB3EFD3F28F94286006DA177 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		ABC6F60228F89F680079F30A = {
@@ -197,7 +199,6 @@
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
-				ABC6F61628F89F680079F30A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC6F61328F89F680079F30A /* ViewController.swift in Sources */,
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
 				ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */,
 			);
@@ -217,14 +217,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ABC6F61428F89F680079F30A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABC6F61528F89F680079F30A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
