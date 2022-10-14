@@ -10,6 +10,11 @@
 		AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB3EFD3D28F9383F006DA177 /* Moya */; };
 		AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EFD4028F98119006DA177 /* AuthViewController.swift */; };
 		AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB71112228F981A100F348B6 /* AuthViewController.xib */; };
+		AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */; };
+		AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81505D28F9FB1900DCFCB4 /* FlickrApi.swift */; };
+		AB81506128FA01DE00DCFCB4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506028FA01DE00DCFCB4 /* Photo.swift */; };
+		AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506228FA01E900DCFCB4 /* Photos.swift */; };
+		AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506528FA020300DCFCB4 /* PhotosResponse.swift */; };
 		ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F60E28F89F680079F30A /* AppDelegate.swift */; };
 		ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */; };
 		ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61A28F89F6A0079F30A /* Assets.xcassets */; };
@@ -18,11 +23,17 @@
 		ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F62E28F8A1D70079F30A /* FirebaseAuth */; };
 		ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63028F8A1D70079F30A /* FirebaseFirestore */; };
 		ABC6F63328F8A1D70079F30A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */; };
+		ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB3EFD4028F98119006DA177 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AB71112228F981A100F348B6 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreenViewController.xib; sourceTree = "<group>"; };
+		AB81505D28F9FB1900DCFCB4 /* FlickrApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrApi.swift; sourceTree = "<group>"; };
+		AB81506028FA01DE00DCFCB4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		AB81506228FA01E900DCFCB4 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		AB81506528FA020300DCFCB4 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
 		ABC6F60B28F89F680079F30A /* Flickgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC6F60E28F89F680079F30A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC6F61828F89F680079F30A /* Flickgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flickgram.xcdatamodel; sourceTree = "<group>"; };
@@ -30,6 +41,7 @@
 		ABC6F61D28F89F6A0079F30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC6F61F28F89F6A0079F30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 				ABC6F63728F8AF0D0079F30A /* Assets */,
 				ABC6F63828F8AF1B0079F30A /* View */,
 				ABC6F63628F8AEF70079F30A /* Delegate */,
+				AB81505B28F9FAFE00DCFCB4 /* Core */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -69,6 +82,7 @@
 		AB3EFD3A28F8B351006DA177 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ABD774FE28F99A8900EEEB90 /* HomeScreen */,
 				AB3EFD3F28F94286006DA177 /* Auth */,
 			);
 			path = Screens;
@@ -89,6 +103,32 @@
 				AB3EFD4028F98119006DA177 /* AuthViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB81505B28F9FAFE00DCFCB4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AB81505C28F9FB0800DCFCB4 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AB81505C28F9FB0800DCFCB4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB81505D28F9FB1900DCFCB4 /* FlickrApi.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AB81505F28FA01D000DCFCB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB81506028FA01DE00DCFCB4 /* Photo.swift */,
+				AB81506228FA01E900DCFCB4 /* Photos.swift */,
+				AB81506528FA020300DCFCB4 /* PhotosResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ABC6F60228F89F680079F30A = {
@@ -146,6 +186,32 @@
 			isa = PBXGroup;
 			children = (
 				ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABD774FE28F99A8900EEEB90 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB81505F28FA01D000DCFCB4 /* Model */,
+				ABD7750428F99ABF00EEEB90 /* View */,
+				ABD7750328F99AB400EEEB90 /* Controller */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		ABD7750328F99AB400EEEB90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABD7750428F99ABF00EEEB90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +286,7 @@
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
 				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
+				AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 			);
@@ -232,9 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB81506128FA01DE00DCFCB4 /* Photo.swift in Sources */,
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
+				ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */,
+				AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */,
 				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */,
+				AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */,
+				AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
