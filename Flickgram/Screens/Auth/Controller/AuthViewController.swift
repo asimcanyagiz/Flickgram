@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseAuth
 
 final class AuthViewController: UIViewController {
     
@@ -22,14 +24,14 @@ final class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     
     
     @IBAction func didSegmentedButtonPressed(_ sender: UISegmentedControl) {
         
-        let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex) as? String
+        let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)!
         
         if title == "Sign In" {
             currentScreen = 0
@@ -44,5 +46,47 @@ final class AuthViewController: UIViewController {
         
     }
     
-
+    
+    
+    
+    @IBAction func didConfirmButtonPressed(_ sender: UIButton) {
+        
+        authOperations(screen: currentScreen)
+        
+    }
+    
+    //MARK: - Login Register Control
+    func authOperations(screen Screen: Int = 0){
+        
+        if Screen == 0 {
+            if let email = emailTextField.text, let password = passwordTextField.text{
+                
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        //Navigate to the ChatViewController
+                        print("Succesfully Login")
+                    }
+                }
+                
+            }
+        } else {
+            if let email = emailTextField.text, let password = passwordTextField.text {
+                
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        //Navigate to the ChatViewController
+                        print("Succesfully Registered")
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
 }
