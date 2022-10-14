@@ -19,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     // MARK: - Core Data stack
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB3EFD3D28F9383F006DA177 /* Moya */; };
 		ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F60E28F89F680079F30A /* AppDelegate.swift */; };
 		ABC6F61328F89F680079F30A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61228F89F680079F30A /* ViewController.swift */; };
 		ABC6F61628F89F680079F30A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61428F89F680079F30A /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 			files = (
 				ABC6F63328F8A1D70079F30A /* FirebaseRemoteConfig in Frameworks */,
 				ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */,
+				AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */,
 				ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +146,7 @@
 				ABC6F62E28F8A1D70079F30A /* FirebaseAuth */,
 				ABC6F63028F8A1D70079F30A /* FirebaseFirestore */,
 				ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */,
+				AB3EFD3D28F9383F006DA177 /* Moya */,
 			);
 			productName = Flickgram;
 			productReference = ABC6F60B28F89F680079F30A /* Flickgram.app */;
@@ -175,6 +178,7 @@
 			mainGroup = ABC6F60228F89F680079F30A;
 			packageReferences = (
 				ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = ABC6F60C28F89F680079F30A /* Products */;
 			projectDirPath = "";
@@ -356,22 +360,27 @@
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flickgram/App/Plists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Flickgram;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.Flickgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -385,22 +394,27 @@
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flickgram/App/Plists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Flickgram;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.Flickgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -428,6 +442,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -439,6 +461,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB3EFD3D28F9383F006DA177 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		ABC6F62E28F8A1D70079F30A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
