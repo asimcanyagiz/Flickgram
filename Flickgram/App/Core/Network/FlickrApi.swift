@@ -8,21 +8,27 @@
 import Foundation
 import Moya
 
+let plugin: PluginType = NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))
+let provider = MoyaProvider<FlickrApi>(plugins: [plugin])
+
 enum FlickrApi {
     case recentPhotos
 }
 
 // MARK: - TargetType
 extension FlickrApi: TargetType {
-    public var baseURL: URL { return URL(string: "https://api.flickr.com")! }
-
-             private var apiKey: String { return "854e5cbc4cb5f855f73b5d394b3230de" }
+    var baseURL: URL {
+        guard let url = URL(string: "https://flickr.com/services/rest")
+        else {
+            fatalError("Base URL not found or not in correct format")
+        }
+        return url
+    }
+    
+    private var apiKey: String { return "854e5cbc4cb5f855f73b5d394b3230de" }
     
     var path: String {
-        switch self {
-        case .recentPhotos:
-            return "/services/rest/?method=flickr.photos.getRecent&api_key=854e5cbc4cb5f855f73b5d394b3230de&format=json&nojsoncallback=1"
-        }
+        "/"
     }
     
     var method: Moya.Method {
@@ -30,10 +36,14 @@ extension FlickrApi: TargetType {
     }
     
     var task: Moya.Task {
-        switch self {
-        case .recentPhotos:
-            return .requestPlain
-        }
+        let parameters: [String: Any] = ["method" : "flickr.photos.getRecent",
+                                         "api_key" : "854e5cbc4cb5f855f73b5d394b3230de",
+                                         "extras" : "owner_name,url_z,url_m,icon_server,date_taken",
+                                         "format" : "json",
+                                         "page" : 10,
+                                         "nojsoncallback" : 1,
+                                          ]
+        return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
     }
     
     var headers: [String : String]? {

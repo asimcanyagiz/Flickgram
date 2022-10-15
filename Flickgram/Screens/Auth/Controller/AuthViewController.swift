@@ -67,6 +67,10 @@ final class AuthViewController: UIViewController {
                     } else {
                         //Navigate to the ChatViewController
                         print("Succesfully Login")
+                        
+                        let homeScreenViewModel = HomeScreenViewModel()
+                        let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
+                        self.navigationController?.pushViewController(homeScreenViewController, animated: true)
                     }
                 }
                 

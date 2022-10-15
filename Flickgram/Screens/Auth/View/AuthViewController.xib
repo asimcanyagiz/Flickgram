@@ -27,7 +27,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-7s-FzF">
                     <rect key="frame" x="127.33333333333333" y="166.66666666666666" width="135.66666666666669" height="48"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" red="0.13441151379999999" green="0.26113039259999998" blue="0.36679121850000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-zL-9tI">
@@ -65,7 +65,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Login">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                <color key="baseBackgroundColor" red="0.4879052639" green="0.79854160549999997" blue="0.53347426649999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="didConfirmButtonPressed:" destination="-1" eventType="touchUpInside" id="Hdc-Ln-eP7"/>
@@ -75,7 +75,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemCyanColor"/>
+            <color key="backgroundColor" red="0.94217187170000005" green="0.94217187170000005" blue="0.94217193129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="XPc-zL-9tI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="92" id="61u-uw-Meh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ubk-rD-AI2" secondAttribute="trailing" constant="72" id="67e-a5-Jql"/>
@@ -95,9 +95,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

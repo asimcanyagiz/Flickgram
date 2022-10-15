@@ -15,6 +15,11 @@
 		AB81506128FA01DE00DCFCB4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506028FA01DE00DCFCB4 /* Photo.swift */; };
 		AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506228FA01E900DCFCB4 /* Photos.swift */; };
 		AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506528FA020300DCFCB4 /* PhotosResponse.swift */; };
+		AB81506A28FA84E700DCFCB4 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506828FA84E700DCFCB4 /* PostsTableViewCell.swift */; };
+		AB81506B28FA84E700DCFCB4 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB81506928FA84E700DCFCB4 /* PostsTableViewCell.xib */; };
+		AB81506E28FA909500DCFCB4 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81506D28FA909500DCFCB4 /* HomeScreenViewModel.swift */; };
+		AB81507128FA936B00DCFCB4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB81507028FA936B00DCFCB4 /* Kingfisher */; };
+		AB81507328FA9D4B00DCFCB4 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81507228FA9D4B00DCFCB4 /* Encodable+Extensions.swift */; };
 		ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F60E28F89F680079F30A /* AppDelegate.swift */; };
 		ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABC6F61728F89F680079F30A /* Flickgram.xcdatamodeld */; };
 		ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC6F61A28F89F6A0079F30A /* Assets.xcassets */; };
@@ -34,6 +39,10 @@
 		AB81506028FA01DE00DCFCB4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AB81506228FA01E900DCFCB4 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		AB81506528FA020300DCFCB4 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
+		AB81506828FA84E700DCFCB4 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		AB81506928FA84E700DCFCB4 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		AB81506D28FA909500DCFCB4 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		AB81507228FA9D4B00DCFCB4 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		ABC6F60B28F89F680079F30A /* Flickgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC6F60E28F89F680079F30A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC6F61828F89F680079F30A /* Flickgram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flickgram.xcdatamodel; sourceTree = "<group>"; };
@@ -53,6 +62,7 @@
 				ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */,
 				AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */,
 				ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */,
+				AB81507128FA936B00DCFCB4 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +92,8 @@
 		AB3EFD3A28F8B351006DA177 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				ABD774FE28F99A8900EEEB90 /* HomeScreen */,
 				AB3EFD3F28F94286006DA177 /* Auth */,
+				ABD774FE28F99A8900EEEB90 /* HomeScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -109,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AB81505C28F9FB0800DCFCB4 /* Network */,
+				AB81507428FA9D6000DCFCB4 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -129,6 +140,31 @@
 				AB81506528FA020300DCFCB4 /* PhotosResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AB81506728FA84AB00DCFCB4 /* PostsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB81506828FA84E700DCFCB4 /* PostsTableViewCell.swift */,
+				AB81506928FA84E700DCFCB4 /* PostsTableViewCell.xib */,
+			);
+			path = PostsTableViewCell;
+			sourceTree = "<group>";
+		};
+		AB81506C28FA907300DCFCB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB81506D28FA909500DCFCB4 /* HomeScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB81507428FA9D6000DCFCB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB81507228FA9D4B00DCFCB4 /* Encodable+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABC6F60228F89F680079F30A = {
@@ -194,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				AB81505F28FA01D000DCFCB4 /* Model */,
+				AB81506C28FA907300DCFCB4 /* ViewModel */,
 				ABD7750428F99ABF00EEEB90 /* View */,
 				ABD7750328F99AB400EEEB90 /* Controller */,
 			);
@@ -211,6 +248,7 @@
 		ABD7750428F99ABF00EEEB90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB81506728FA84AB00DCFCB4 /* PostsTableViewCell */,
 				AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */,
 			);
 			path = View;
@@ -237,6 +275,7 @@
 				ABC6F63028F8A1D70079F30A /* FirebaseFirestore */,
 				ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */,
 				AB3EFD3D28F9383F006DA177 /* Moya */,
+				AB81507028FA936B00DCFCB4 /* Kingfisher */,
 			);
 			productName = Flickgram;
 			productReference = ABC6F60B28F89F680079F30A /* Flickgram.app */;
@@ -269,6 +308,7 @@
 			packageReferences = (
 				ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */,
+				AB81506F28FA936A00DCFCB4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = ABC6F60C28F89F680079F30A /* Products */;
 			projectDirPath = "";
@@ -287,6 +327,7 @@
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
 				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
 				AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */,
+				AB81506B28FA84E700DCFCB4 /* PostsTableViewCell.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 			);
@@ -305,8 +346,11 @@
 				AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */,
 				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */,
+				AB81507328FA9D4B00DCFCB4 /* Encodable+Extensions.swift in Sources */,
+				AB81506A28FA84E700DCFCB4 /* PostsTableViewCell.swift in Sources */,
 				AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */,
 				AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */,
+				AB81506E28FA909500DCFCB4 /* HomeScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +580,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		AB81506F28FA936A00DCFCB4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -551,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		AB81507028FA936B00DCFCB4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB81506F28FA936A00DCFCB4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		ABC6F62E28F8A1D70079F30A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
