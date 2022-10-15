@@ -25,13 +25,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-7s-FzF">
-                    <rect key="frame" x="127.33333333333333" y="166.66666666666666" width="135.66666666666669" height="48"/>
+                    <rect key="frame" x="127.33333333333333" y="168" width="135.66666666666669" height="48"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                     <color key="textColor" red="0.13441151379999999" green="0.26113039259999998" blue="0.36679121850000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-zL-9tI">
-                    <rect key="frame" x="92" y="294.66666666666669" width="206" height="32"/>
+                    <rect key="frame" x="92" y="296" width="206" height="32"/>
                     <segments>
                         <segment title="Sign In"/>
                         <segment title="Sign Up"/>
@@ -41,7 +41,7 @@
                     </connections>
                 </segmentedControl>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ubk-rD-AI2">
-                    <rect key="frame" x="72" y="381.66666666666669" width="246" height="100"/>
+                    <rect key="frame" x="72" y="383" width="246" height="100"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wgf-gH-zzo">
                             <rect key="frame" x="0.0" y="0.0" width="246" height="34"/>
@@ -56,17 +56,15 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BEA-6s-NdO">
-                    <rect key="frame" x="120" y="529.66666666666663" width="150" height="40.333333333333371"/>
+                    <rect key="frame" x="120" y="531" width="150" height="39"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKE-vf-VNX">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="40.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="39"/>
                             <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            <color key="tintColor" systemColor="systemGreenColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Login">
-                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="baseBackgroundColor" red="0.4879052639" green="0.79854160549999997" blue="0.53347426649999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </buttonConfiguration>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="tintColor" red="0.94217187170000005" green="0.94217187170000005" blue="0.94217193129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Login"/>
                             <connections>
                                 <action selector="didConfirmButtonPressed:" destination="-1" eventType="touchUpInside" id="Hdc-Ln-eP7"/>
                             </connections>

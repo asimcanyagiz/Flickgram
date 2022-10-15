@@ -71,9 +71,16 @@ extension HomeScreenViewController: UITableViewDataSource {
             fatalError("photos not found.")
         }
         
-        cell.title = photo.title
-        cell.price = photo.owner
-        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
+//        cell.title = photo.title
+//        cell.price = photo.owner
+//        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
+//        }
+        
+        cell.iconImageView.kf.setImage(with: photo.iconUrl) { _ in
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        cell.profilePicImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         
