@@ -1,13 +1,13 @@
 //
-//  Photo.swift
+//  SearchPhoto.swift
 //  Flickgram
 //
-//  Created by Asım can Yağız on 14.10.2022.
+//  Created by Asım can Yağız on 16.10.2022.
 //
 
 import Foundation
 
-struct Photo: Codable {
+struct SearchPhoto: Codable {
     let id, owner, secret, server: String?
     let farm: Int?
     let title: String?
@@ -21,7 +21,7 @@ struct Photo: Codable {
     let height_m, width_m: Int?
 }
 
-extension Photo {
+extension SearchPhoto {
     var iconUrl: URL {
         guard let icon = url_z,
               let iconUrl = URL(string: icon) else {
@@ -37,7 +37,7 @@ extension Photo {
     }
 }
 
-extension Photo {
+extension SearchPhoto {
     init(from dict: [String : Any]) {
         id = dict["id"] as? String
         owner = dict["owner"] as? String

@@ -70,10 +70,13 @@ final class AuthViewController: UIViewController {
                         
                         let homeScreenViewModel = HomeScreenViewModel()
                         let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
-                        homeScreenViewController.tabBarItem.title = "Home"
+                        let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)
+                        
                         homeScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                        searchScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                        
                         let tabBarController = UITabBarController()
-                        tabBarController.viewControllers = [homeScreenViewController]
+                        tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController]
                         self.navigationController?.pushViewController(tabBarController, animated: true)
                     }
                 }
