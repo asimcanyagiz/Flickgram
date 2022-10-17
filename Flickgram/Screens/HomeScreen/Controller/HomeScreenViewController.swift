@@ -51,11 +51,6 @@ final class HomeScreenViewController: UIViewController {
  // MARK: - UITableViewDelegate
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let photo = viewModel.photoForIndexPath(indexPath) else {
-            return
-        }
-        //let viewModel = HomeScreenViewModel(photo: photo)
-        //navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

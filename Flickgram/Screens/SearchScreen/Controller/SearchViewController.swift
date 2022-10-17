@@ -63,14 +63,17 @@ class SearchViewController: UIViewController {
     }
     
 }
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        let scaleFactor = (screenWidth / 2) - 6
+
+        return CGSize(width: scaleFactor, height: scaleFactor)
+    }
+}
 
 extension SearchViewController: UICollectionViewDelegate {
     func tableView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
-        guard let photo = searchViewModel.photoForIndexPath(indexPath) else {
-            return
-        }
-        //let viewModel = HomeScreenViewModel(photo: photo)
-        //navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
