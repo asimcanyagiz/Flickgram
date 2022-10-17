@@ -10,7 +10,9 @@ import UIKit
 class SearchViewController: UIViewController {
     private var searchViewModel: HomeScreenViewModel
     
-    @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     init(searchViewModel: HomeScreenViewModel){
         self.searchViewModel = searchViewModel
@@ -21,31 +23,33 @@ class SearchViewController: UIViewController {
     }
     
     
-    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        title = "Photos"
+        title = "Search"
         
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        let nib = UINib(nibName: "SearchScreenTableViewCell", bundle: nil)
-        searchTableView.register(nib, forCellReuseIdentifier: "cell")
+        let nib = UINib(nibName: "SearchScreenCollectionViewCell", bundle: nil)
+        
+        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+        
+        
         
         searchViewModel.fetchPhotos()
         
         searchViewModel.changeHandler = { change in
             switch change {
             case .didFetchPhotos:
-                self.searchTableView.reloadData()
+                self.collectionView.reloadData()
                 
             case .didErrorOccurred(let error):
                 print(error.localizedDescription)
             }
         }
-        
-        
         
         let searchBar:UISearchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.prominent
@@ -54,14 +58,14 @@ class SearchViewController: UIViewController {
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
-        searchTableView.addSubview(searchBar)
+        collectionView.addSubview(searchBar)
         
     }
+    
 }
 
-// MARK: - UITableViewDelegate
-extension SearchViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension SearchViewController: UICollectionViewDelegate {
+    func tableView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
         guard let photo = searchViewModel.photoForIndexPath(indexPath) else {
             return
         }
@@ -70,32 +74,23 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - UITableViewDataSource
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension SearchViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchViewModel.numberOfRows
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchScreenTableViewCell
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchScreenCollectionViewCell
+        
         guard let photo = searchViewModel.photoForIndexPath(indexPath) else {
-            fatalError("photos not found.")
+            fatalError("Photo not found")
         }
         
-        //        cell.title = photo.title
-        //        cell.price = photo.owner
-        //        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
-        //            tableView.reloadRows(at: [indexPath], with: .automatic)
-        //        }
-        
-        cell.firstImageView.kf.setImage(with: photo.iconUrl) { _ in
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-        cell.secondImageView.kf.setImage(with: photo.iconUrl) { _ in
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-        cell.secondImageView.transform = CGAffineTransformMakeScale(-1, 1)
-        
+        cell.imageViewCell.kf.setImage(with: photo.iconUrl)
         return cell
     }
 }
@@ -105,6 +100,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
         if let text = searchBar.text, textSearched.count > 1 {
             searchViewModel.searchPhotos(searchText: text)
+            print(text)
         }
     }
 }

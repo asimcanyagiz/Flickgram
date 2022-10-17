@@ -15,10 +15,10 @@
 		AB6F8DBA28FBE3050082A209 /* SearchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DB928FBE3050082A209 /* SearchPhotos.swift */; };
 		AB6F8DBC28FBE3100082A209 /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DBB28FBE3100082A209 /* SearchPhoto.swift */; };
 		AB6F8DBE28FBE4F30082A209 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DBD28FBE4F30082A209 /* SearchScreenViewModel.swift */; };
-		AB6F8DC128FC17970082A209 /* SearchScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DBF28FC17970082A209 /* SearchScreenTableViewCell.swift */; };
-		AB6F8DC228FC17970082A209 /* SearchScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6F8DC028FC17970082A209 /* SearchScreenTableViewCell.xib */; };
 		AB6F8DC928FC1E140082A209 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DC728FC1E140082A209 /* SearchViewController.swift */; };
 		AB6F8DCA28FC1E140082A209 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6F8DC828FC1E140082A209 /* SearchViewController.xib */; };
+		AB6F8DCD28FD9B040082A209 /* SearchScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6F8DCB28FD9B040082A209 /* SearchScreenCollectionViewCell.swift */; };
+		AB6F8DCE28FD9B040082A209 /* SearchScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6F8DCC28FD9B040082A209 /* SearchScreenCollectionViewCell.xib */; };
 		AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB71112228F981A100F348B6 /* AuthViewController.xib */; };
 		AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */; };
 		AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB81505D28F9FB1900DCFCB4 /* FlickrApi.swift */; };
@@ -49,10 +49,10 @@
 		AB6F8DB928FBE3050082A209 /* SearchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotos.swift; sourceTree = "<group>"; };
 		AB6F8DBB28FBE3100082A209 /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		AB6F8DBD28FBE4F30082A209 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
-		AB6F8DBF28FC17970082A209 /* SearchScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenTableViewCell.swift; sourceTree = "<group>"; };
-		AB6F8DC028FC17970082A209 /* SearchScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenTableViewCell.xib; sourceTree = "<group>"; };
 		AB6F8DC728FC1E140082A209 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AB6F8DC828FC1E140082A209 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		AB6F8DCB28FD9B040082A209 /* SearchScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB6F8DCC28FD9B040082A209 /* SearchScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB71112228F981A100F348B6 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		AB81505928F99B3E00DCFCB4 /* HomeScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreenViewController.xib; sourceTree = "<group>"; };
 		AB81505D28F9FB1900DCFCB4 /* FlickrApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrApi.swift; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 		AB6F8DB228FBE0C90082A209 /* SearchScreenViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				AB6F8DBF28FC17970082A209 /* SearchScreenTableViewCell.swift */,
-				AB6F8DC028FC17970082A209 /* SearchScreenTableViewCell.xib */,
+				AB6F8DCB28FD9B040082A209 /* SearchScreenCollectionViewCell.swift */,
+				AB6F8DCC28FD9B040082A209 /* SearchScreenCollectionViewCell.xib */,
 			);
 			path = SearchScreenViewCell;
 			sourceTree = "<group>";
@@ -403,13 +403,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
+				AB6F8DCE28FD9B040082A209 /* SearchScreenCollectionViewCell.xib in Resources */,
 				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
 				AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */,
 				AB81506B28FA84E700DCFCB4 /* PostsTableViewCell.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 				AB6F8DCA28FC1E140082A209 /* SearchViewController.xib in Resources */,
-				AB6F8DC228FC17970082A209 /* SearchScreenTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,9 +425,9 @@
 				AB6F8DB628FBE1790082A209 /* CGFloat+Extensions.swift in Sources */,
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
 				AB6F8DC928FC1E140082A209 /* SearchViewController.swift in Sources */,
-				AB6F8DC128FC17970082A209 /* SearchScreenTableViewCell.swift in Sources */,
 				ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */,
 				AB6F8DBA28FBE3050082A209 /* SearchPhotos.swift in Sources */,
+				AB6F8DCD28FD9B040082A209 /* SearchScreenCollectionViewCell.swift in Sources */,
 				AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */,
 				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				AB6F8DB828FBE2F60082A209 /* SearchPhotosResponse.swift in Sources */,
