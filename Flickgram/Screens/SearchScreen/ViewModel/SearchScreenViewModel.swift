@@ -42,6 +42,22 @@ final class SearchScreenViewModel {
         }
     }
     
+    func searchPhotos(searchText: String) {
+        provider.request(.searchPhotos(text: searchText)) { result in
+            switch result {
+            case .failure(let error):
+                self.changeHandler?(.didErrorOccurred(error))
+            case .success(let response):
+                do {
+                    let searchPhotosResponse = try JSONDecoder().decode(SearchPhotosResponse.self, from: response.data)
+                    self.searchPhotosResponse = searchPhotosResponse
+                } catch {
+                    self.changeHandler?(.didErrorOccurred(error))
+                }
+            }
+        }
+    }
+    
     func photoForIndexPath(_ indexPath: IndexPath) -> SearchPhoto? {
         searchPhotosResponse?.searchPhotos?.searchPhoto?[indexPath.row]
     }

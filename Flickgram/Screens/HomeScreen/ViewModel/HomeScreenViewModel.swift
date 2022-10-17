@@ -42,6 +42,22 @@ final class HomeScreenViewModel {
         }
     }
     
+    func searchPhotos(searchText: String) {
+        provider.request(.searchPhotos(text: searchText)) { result in
+            switch result {
+            case .failure(let error):
+                self.changeHandler?(.didErrorOccurred(error))
+            case .success(let response):
+                do {
+                    let photosResponse = try JSONDecoder().decode(PhotosResponse.self, from: response.data)
+                    self.photosResponse = photosResponse
+                } catch {
+                    self.changeHandler?(.didErrorOccurred(error))
+                }
+            }
+        }
+    }
+    
     func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
         photosResponse?.photos?.photo?[indexPath.row]
     }

@@ -91,6 +91,10 @@ extension SearchViewController: UITableViewDataSource {
         cell.firstImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        cell.secondImageView.kf.setImage(with: photo.iconUrl) { _ in
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        cell.secondImageView.transform = CGAffineTransformMakeScale(-1, 1)
         
         return cell
     }
@@ -100,8 +104,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
         if let text = searchBar.text, textSearched.count > 1 {
-//            fetchMovies(with: text)
-            print(text)
+            searchViewModel.searchPhotos(searchText: text)
         }
     }
 }
