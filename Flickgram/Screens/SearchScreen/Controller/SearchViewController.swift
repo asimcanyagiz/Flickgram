@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,18 @@ class SearchViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        
+        
+        
+        let searchBar:UISearchBar = UISearchBar()
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        searchTableView.addSubview(searchBar)
+        
     }
 }
 
@@ -80,5 +93,15 @@ extension SearchViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
+        if let text = searchBar.text, textSearched.count > 1 {
+//            fetchMovies(with: text)
+            print(text)
+        }
     }
 }
