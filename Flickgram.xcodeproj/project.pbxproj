@@ -38,6 +38,9 @@
 		ABC6F62F28F8A1D70079F30A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F62E28F8A1D70079F30A /* FirebaseAuth */; };
 		ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63028F8A1D70079F30A /* FirebaseFirestore */; };
 		ABC6F63328F8A1D70079F30A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */; };
+		ABCE198028FF2AB30041EBE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE197F28FF2AB30041EBE0 /* User.swift */; };
+		ABCE198328FF2C9D0041EBE0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198228FF2C9D0041EBE0 /* AuthViewModel.swift */; };
+		ABCE198628FF2D720041EBE0 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */; };
 		ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,9 @@
 		ABC6F61D28F89F6A0079F30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC6F61F28F89F6A0079F30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABCE197F28FF2AB30041EBE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ABCE198228FF2C9D0041EBE0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +128,8 @@
 		AB3EFD3F28F94286006DA177 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE198128FF2C8F0041EBE0 /* ViewModel */,
+				ABCE197E28FF2AAA0041EBE0 /* Model */,
 				AB3E4A6B28F9817C00C74586 /* View */,
 				AB71112428F981D600F348B6 /* Controller */,
 			);
@@ -195,6 +203,7 @@
 		AB81505B28F9FAFE00DCFCB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE198428FF2D660041EBE0 /* Helpers */,
 				AB81505C28F9FB0800DCFCB4 /* Network */,
 				AB81507428FA9D6000DCFCB4 /* Extensions */,
 			);
@@ -302,6 +311,30 @@
 				ABC6F61C28F89F6A0079F30A /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ABCE197E28FF2AAA0041EBE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE197F28FF2AB30041EBE0 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABCE198128FF2C8F0041EBE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE198228FF2C9D0041EBE0 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABCE198428FF2D660041EBE0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		ABD774FE28F99A8900EEEB90 /* HomeScreen */ = {
@@ -422,12 +455,14 @@
 			files = (
 				AB81506128FA01DE00DCFCB4 /* Photo.swift in Sources */,
 				AB6F8DBE28FBE4F30082A209 /* SearchScreenViewModel.swift in Sources */,
+				ABCE198628FF2D720041EBE0 /* AlertPresentable.swift in Sources */,
 				AB6F8DB628FBE1790082A209 /* CGFloat+Extensions.swift in Sources */,
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
 				AB6F8DC928FC1E140082A209 /* SearchViewController.swift in Sources */,
 				ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */,
 				AB6F8DBA28FBE3050082A209 /* SearchPhotos.swift in Sources */,
 				AB6F8DCD28FD9B040082A209 /* SearchScreenCollectionViewCell.swift in Sources */,
+				ABCE198028FF2AB30041EBE0 /* User.swift in Sources */,
 				AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */,
 				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				AB6F8DB828FBE2F60082A209 /* SearchPhotosResponse.swift in Sources */,
@@ -436,6 +471,7 @@
 				AB81506A28FA84E700DCFCB4 /* PostsTableViewCell.swift in Sources */,
 				AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */,
 				AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */,
+				ABCE198328FF2C9D0041EBE0 /* AuthViewModel.swift in Sources */,
 				AB81506E28FA909500DCFCB4 /* HomeScreenViewModel.swift in Sources */,
 				AB6F8DBC28FBE3100082A209 /* SearchPhoto.swift in Sources */,
 				AB6F8DB128FBE0590082A209 /* SearchScreenView.swift in Sources */,

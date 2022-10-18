@@ -7,9 +7,33 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseAuth
 
-final class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController, AlertPresentable {
+    
+    private let viewModel: AuthViewModel
+    
+    enum AuthType: String {
+        case signIn = "Sign In"
+        case signUp = "Sign Up"
+        
+        init(text: String) {
+            switch text {
+            case "Sign In":
+                self = .signIn
+            case "Sign Up":
+                self = .signUp
+            default:
+                self = .signIn
+            }
+        }
+    }
+    
+    var authType: AuthType = .signIn {
+        didSet {
+            pageLabel.text = title
+            confirmButton.setTitle(title, for: .normal)
+        }
+    }
     
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,12 +42,35 @@ final class AuthViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var currentScreen = 0
+    // MARK: - Init
+    init(viewModel: AuthViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.changeHandler = { change in
+            switch change {
+            case .didErrorOccurred(let error):
+                self.showError(error)
+            case .didSignUpSuccessful:
+                self.showAlert(title: "SIGN UP SUCCESSFUL!")
+            }
+        }
+        
+        title = "Auth"
+        
+        viewModel.fetchRemoteConfig { isSignUpDisabled in
+            self.segmentedControl.isHidden = isSignUpDisabled
+        }
         
     }
     
@@ -31,18 +78,8 @@ final class AuthViewController: UIViewController {
     
     @IBAction func didSegmentedButtonPressed(_ sender: UISegmentedControl) {
         
-        let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)!
-        
-        if title == "Sign In" {
-            currentScreen = 0
-            pageLabel.text = "Sign In"
-            confirmButton.titleLabel?.text = "Login"
-            
-        } else {
-            currentScreen = 1
-            pageLabel.text = "Sign Up"
-            confirmButton.titleLabel?.text = "Sign Up"
-        }
+        let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        authType = AuthType(text: title ?? "Sign In")
         
     }
     
@@ -51,7 +88,31 @@ final class AuthViewController: UIViewController {
     
     @IBAction func didConfirmButtonPressed(_ sender: UIButton) {
         
-        authOperations(screen: currentScreen)
+        guard let credential = emailTextField.text,
+              let password = passwordTextField.text else {
+            return
+        }
+        switch authType {
+        case .signIn:
+            viewModel.signIn(email: credential,
+                             password: password,
+                             completion: { [weak self] in
+                guard let self = self else { return }
+                let homeScreenViewModel = HomeScreenViewModel()
+                let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
+                let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)
+                
+                homeScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                searchScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                
+                let tabBarController = UITabBarController()
+                tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController]
+                self.navigationController?.pushViewController(tabBarController, animated: true)
+            })
+        case .signUp:
+            viewModel.signUp(email: credential,
+                             password: password)
+        }
         
     }
     
@@ -68,16 +129,7 @@ final class AuthViewController: UIViewController {
                         //Navigate to the ChatViewController
                         print("Succesfully Login")
                         
-                        let homeScreenViewModel = HomeScreenViewModel()
-                        let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
-                        let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)
                         
-                        homeScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
-                        searchScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
-                        
-                        let tabBarController = UITabBarController()
-                        tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController]
-                        self.navigationController?.pushViewController(tabBarController, animated: true)
                     }
                 }
                 
@@ -101,3 +153,5 @@ final class AuthViewController: UIViewController {
     
     
 }
+
+

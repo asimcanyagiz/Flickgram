@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import FirebaseCore
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,26 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupFirebase()
         setupWindow()
-        
-        FirebaseApp.configure()
         
         return true
     }
     
+    private func setupFirebase() {
+        FirebaseApp.configure()
+        
+        _ = Firestore.firestore()
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //MARK: - Setup Window / First Window
     private func setupWindow() {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let viewController = AuthViewController()
+        let viewModel = AuthViewModel()
+        let viewController = AuthViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
