@@ -98,15 +98,19 @@ final class AuthViewController: UIViewController, AlertPresentable {
                              password: password,
                              completion: { [weak self] in
                 guard let self = self else { return }
+                
                 let homeScreenViewModel = HomeScreenViewModel()
+                let personalViewModel = PersonalViewModel()
                 let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
                 let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)
+                let personalViewController = PersonalViewController(viewModel: personalViewModel)
                 
                 homeScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
-                searchScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                searchScreenViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                personalViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
                 
                 let tabBarController = UITabBarController()
-                tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController]
+                tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController, personalViewController]
                 self.navigationController?.pushViewController(tabBarController, animated: true)
             })
         case .signUp:

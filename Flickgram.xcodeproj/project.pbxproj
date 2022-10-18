@@ -41,6 +41,15 @@
 		ABCE198028FF2AB30041EBE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE197F28FF2AB30041EBE0 /* User.swift */; };
 		ABCE198328FF2C9D0041EBE0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198228FF2C9D0041EBE0 /* AuthViewModel.swift */; };
 		ABCE198628FF2D720041EBE0 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */; };
+		ABCE198D28FF304F0041EBE0 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198B28FF304F0041EBE0 /* PersonalViewController.swift */; };
+		ABCE198E28FF304F0041EBE0 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABCE198C28FF304F0041EBE0 /* PersonalViewController.xib */; };
+		ABCE199028FF305E0041EBE0 /* PersonalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE198F28FF305E0041EBE0 /* PersonalViewModel.swift */; };
+		ABCE199328FF35160041EBE0 /* CAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199228FF35160041EBE0 /* CAViewModel.swift */; };
+		ABCE199528FF35320041EBE0 /* FireBaseFireStoreAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199428FF35320041EBE0 /* FireBaseFireStoreAccessible.swift */; };
+		ABCE199728FF35920041EBE0 /* UserDefaultsAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199628FF35910041EBE0 /* UserDefaultsAccessible.swift */; };
+		ABCE199A28FF35C60041EBE0 /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */; };
+		ABCE19A028FF3A430041EBE0 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */; };
+		ABCE19A128FF3A430041EBE0 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */; };
 		ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +85,15 @@
 		ABCE197F28FF2AB30041EBE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ABCE198228FF2C9D0041EBE0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		ABCE198B28FF304F0041EBE0 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		ABCE198C28FF304F0041EBE0 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		ABCE198F28FF305E0041EBE0 /* PersonalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewModel.swift; sourceTree = "<group>"; };
+		ABCE199228FF35160041EBE0 /* CAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAViewModel.swift; sourceTree = "<group>"; };
+		ABCE199428FF35320041EBE0 /* FireBaseFireStoreAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFireStoreAccessible.swift; sourceTree = "<group>"; };
+		ABCE199628FF35910041EBE0 /* UserDefaultsAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccessible.swift; sourceTree = "<group>"; };
+		ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConstants.swift; sourceTree = "<group>"; };
+		ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +136,7 @@
 		AB3EFD3A28F8B351006DA177 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE198728FF300B0041EBE0 /* Personal */,
 				AB6F8DA828FBDE640082A209 /* SearchScreen */,
 				AB3EFD3F28F94286006DA177 /* Auth */,
 				ABD774FE28F99A8900EEEB90 /* HomeScreen */,
@@ -203,6 +222,8 @@
 		AB81505B28F9FAFE00DCFCB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE199828FF35B80041EBE0 /* Constants */,
+				ABCE199128FF35070041EBE0 /* CAKit */,
 				ABCE198428FF2D660041EBE0 /* Helpers */,
 				AB81505C28F9FB0800DCFCB4 /* Network */,
 				AB81507428FA9D6000DCFCB4 /* Extensions */,
@@ -250,6 +271,8 @@
 			children = (
 				AB81507228FA9D4B00DCFCB4 /* Encodable+Extensions.swift */,
 				AB6F8DB528FBE1790082A209 /* CGFloat+Extensions.swift */,
+				ABCE199428FF35320041EBE0 /* FireBaseFireStoreAccessible.swift */,
+				ABCE199628FF35910041EBE0 /* UserDefaultsAccessible.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +358,66 @@
 				ABCE198528FF2D710041EBE0 /* AlertPresentable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ABCE198728FF300B0041EBE0 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE199B28FF3A110041EBE0 /* PhotoTableViewCell */,
+				ABCE198828FF30120041EBE0 /* ViewModel */,
+				ABCE198928FF301D0041EBE0 /* View */,
+				ABCE198A28FF30220041EBE0 /* Controller */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		ABCE198828FF30120041EBE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE198F28FF305E0041EBE0 /* PersonalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABCE198928FF301D0041EBE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE198C28FF304F0041EBE0 /* PersonalViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABCE198A28FF30220041EBE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE198B28FF304F0041EBE0 /* PersonalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABCE199128FF35070041EBE0 /* CAKit */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE199228FF35160041EBE0 /* CAViewModel.swift */,
+			);
+			path = CAKit;
+			sourceTree = "<group>";
+		};
+		ABCE199828FF35B80041EBE0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		ABCE199B28FF3A110041EBE0 /* PhotoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */,
+				ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */,
+			);
+			path = PhotoTableViewCell;
 			sourceTree = "<group>";
 		};
 		ABD774FE28F99A8900EEEB90 /* HomeScreen */ = {
@@ -437,11 +520,13 @@
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
 				AB6F8DCE28FD9B040082A209 /* SearchScreenCollectionViewCell.xib in Resources */,
+				ABCE19A128FF3A430041EBE0 /* PhotoTableViewCell.xib in Resources */,
 				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
 				AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */,
 				AB81506B28FA84E700DCFCB4 /* PostsTableViewCell.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
+				ABCE198E28FF304F0041EBE0 /* PersonalViewController.xib in Resources */,
 				AB6F8DCA28FC1E140082A209 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,19 +545,26 @@
 				ABC6F60F28F89F680079F30A /* AppDelegate.swift in Sources */,
 				AB6F8DC928FC1E140082A209 /* SearchViewController.swift in Sources */,
 				ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */,
+				ABCE199328FF35160041EBE0 /* CAViewModel.swift in Sources */,
+				ABCE199728FF35920041EBE0 /* UserDefaultsAccessible.swift in Sources */,
 				AB6F8DBA28FBE3050082A209 /* SearchPhotos.swift in Sources */,
+				ABCE19A028FF3A430041EBE0 /* PhotoTableViewCell.swift in Sources */,
+				ABCE199A28FF35C60041EBE0 /* UserDefaultConstants.swift in Sources */,
 				AB6F8DCD28FD9B040082A209 /* SearchScreenCollectionViewCell.swift in Sources */,
 				ABCE198028FF2AB30041EBE0 /* User.swift in Sources */,
 				AB81506628FA020300DCFCB4 /* PhotosResponse.swift in Sources */,
 				AB3EFD4228F98119006DA177 /* AuthViewController.swift in Sources */,
 				AB6F8DB828FBE2F60082A209 /* SearchPhotosResponse.swift in Sources */,
+				ABCE199528FF35320041EBE0 /* FireBaseFireStoreAccessible.swift in Sources */,
 				ABC6F61928F89F680079F30A /* Flickgram.xcdatamodeld in Sources */,
 				AB81507328FA9D4B00DCFCB4 /* Encodable+Extensions.swift in Sources */,
 				AB81506A28FA84E700DCFCB4 /* PostsTableViewCell.swift in Sources */,
 				AB81505E28F9FB1900DCFCB4 /* FlickrApi.swift in Sources */,
 				AB81506328FA01E900DCFCB4 /* Photos.swift in Sources */,
+				ABCE199028FF305E0041EBE0 /* PersonalViewModel.swift in Sources */,
 				ABCE198328FF2C9D0041EBE0 /* AuthViewModel.swift in Sources */,
 				AB81506E28FA909500DCFCB4 /* HomeScreenViewModel.swift in Sources */,
+				ABCE198D28FF304F0041EBE0 /* PersonalViewController.swift in Sources */,
 				AB6F8DBC28FBE3100082A209 /* SearchPhoto.swift in Sources */,
 				AB6F8DB128FBE0590082A209 /* SearchScreenView.swift in Sources */,
 			);

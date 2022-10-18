@@ -8,11 +8,11 @@
 import UIKit
 import Kingfisher
 
-final class HomeScreenViewController: UIViewController {
+final class HomeScreenViewController: UIViewController, AlertPresentable {
     private var viewModel: HomeScreenViewModel
     
     @IBOutlet private weak var tableView : UITableView!
-
+    
     // MARK: - Init
     init(viewModel: HomeScreenViewModel) {
         self.viewModel = viewModel
@@ -28,7 +28,7 @@ final class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Photos"
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -46,9 +46,11 @@ final class HomeScreenViewController: UIViewController {
             }
         }
     }
+    
+    
 }
 
- // MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
@@ -66,11 +68,11 @@ extension HomeScreenViewController: UITableViewDataSource {
             fatalError("photos not found.")
         }
         
-//        cell.title = photo.title
-//        cell.price = photo.owner
-//        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
-//            tableView.reloadRows(at: [indexPath], with: .automatic)
-//        }
+        //        cell.title = photo.title
+        //        cell.price = photo.owner
+        //        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
+        //            tableView.reloadRows(at: [indexPath], with: .automatic)
+        //        }
         
         cell.iconImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -78,7 +80,20 @@ extension HomeScreenViewController: UITableViewDataSource {
         cell.profilePicImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedMapButton(_:)), for: .touchUpInside)
+        viewModel.addFavorite(cell.indexNumber)
         
         return cell
     }
+    
+    @objc func onClickedMapButton(_ sender: Any?) {
+
+        print("tapped")
+    }
+    
+    
+    
 }
+
+
