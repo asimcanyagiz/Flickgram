@@ -29,6 +29,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Search"
+        self.parent?.title = "Search"
         
         collectionView.dataSource = self
         collectionView.delegate = self

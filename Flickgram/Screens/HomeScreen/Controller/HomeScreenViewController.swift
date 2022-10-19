@@ -28,6 +28,7 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
         super.viewDidLoad()
         
         title = "Photos"
+        self.parent?.title = "Photos"
         
         tableView.delegate = self
         tableView.dataSource = self

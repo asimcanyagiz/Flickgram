@@ -31,6 +31,7 @@ class PersonalViewController: UIViewController, AlertPresentable {
         super.viewDidLoad()
         
         title = "Profile"
+        self.parent?.title = "Profile"
         
         personalCollectionView.dataSource = self
         personalCollectionView.delegate = self

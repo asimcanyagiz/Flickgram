@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-//        navigationController.navigationItem.hidesBackButton = true
         self.window = window
     }
     
