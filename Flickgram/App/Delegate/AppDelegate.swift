@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import FirebaseCore
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,21 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        setupFirebase()
+        setupWindow()
+        
         return true
     }
     
+    private func setupFirebase() {
+        FirebaseApp.configure()
+        
+        _ = Firestore.firestore()
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    private func setupWindow() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let viewModel = AuthViewModel()
+        let viewController = AuthViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+//        navigationController.navigationItem.hidesBackButton = true
+        self.window = window
+    }
     
     
     
