@@ -107,6 +107,7 @@
                 <outlet property="iconImageView" destination="XTW-lw-gJ4" id="GWT-m6-69E"/>
                 <outlet property="likeButton" destination="bDT-vg-GXu" id="BA1-DG-Yc1"/>
                 <outlet property="profilePicImageView" destination="x7u-C9-MBt" id="Lx5-hg-Shp"/>
+                <outlet property="saveButton" destination="efa-9H-r9s" id="MNN-c7-cAi"/>
             </connections>
             <point key="canvasLocation" x="-401.53846153846155" y="-81.753554502369667"/>
         </tableViewCell>

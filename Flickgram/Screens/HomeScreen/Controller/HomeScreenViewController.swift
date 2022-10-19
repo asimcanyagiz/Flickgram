@@ -96,18 +96,22 @@ extension HomeScreenViewController: UITableViewDataSource {
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedMapButton(_:)), for: .touchUpInside)
-        DispatchQueue.main.async {
-            self.viewModel.addFavorite(cell.indexNumber)
-        }
-        
+        cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedLikeButton(_:)), for: .touchUpInside)
+        cell.saveButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedSaveButton(_:)), for: .touchUpInside)
+        viewModel.addFavorite(cell.indexNumber)
         
         return cell
     }
     
-    @objc func onClickedMapButton(_ sender: Any?) {
-
-        print("tapped")
+    @objc func onClickedLikeButton(_ sender: Any?) {
+        showAlert(title: "Success!", message: "Your choice will be added your favorites after the security progress, don't forget to check", cancelButtonTitle: nil)
+        
+        tableView.reloadData()
+    }
+    @objc func onClickedSaveButton(_ sender: Any?) {
+        showAlert(title: "Success!", message: "Unfortunately we can't access to your phone albums but they will be added your favorites after the security progress, don't forget to check", cancelButtonTitle: nil)
+        
+        tableView.reloadData()
     }
     
     

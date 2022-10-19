@@ -22,11 +22,19 @@ class PostsTableViewCell: UITableViewCell {
         }
     }
     
+    
+    @IBOutlet weak var saveButton: UIButton!{
+        didSet {
+            saveButton.addTarget(self, action: #selector(PostsTableViewCell.mapsHit(_:)), for: UIControl.Event.touchUpInside)
+        }
+    }
+    
+    
+    
+    
     @objc func mapsHit(_ sender: UIButton){
         indexNumber = sender.tag
-        print("This button is at \(indexNumber) row")
-        // get indexPath.row from cell
-        // do something with it
+        sender.imageView?.image = UIImage(named: "hand.thumbsup.fill")
 
     }
     

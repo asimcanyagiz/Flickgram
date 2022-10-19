@@ -115,7 +115,6 @@ final class HomeScreenViewModel: CAViewModel {
                 return
             }
             let user = User(from: data)
-            print(user.favorites?.count)
             
             user.favorites?.forEach({
                 word in
@@ -125,8 +124,6 @@ final class HomeScreenViewModel: CAViewModel {
                 self.number.append(word)
                 
             })
-            print(self.number)
-            print(self.number.count)
         }
     }
 }

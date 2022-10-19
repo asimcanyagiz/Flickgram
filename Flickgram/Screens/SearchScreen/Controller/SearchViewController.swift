@@ -103,7 +103,6 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
         if let text = searchBar.text, textSearched.count > 1 {
             searchViewModel.searchPhotos(searchText: text)
-            print(text)
         }
     }
 }

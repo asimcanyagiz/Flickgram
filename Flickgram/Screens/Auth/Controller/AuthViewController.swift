@@ -111,6 +111,8 @@ final class AuthViewController: UIViewController, AlertPresentable {
                 let tabBarController = UITabBarController()
                 tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController, personalViewController]
                 self.navigationController?.pushViewController(tabBarController, animated: true)
+                self.navigationController?.navigationItem.hidesBackButton = true
+                tabBarController.navigationItem.hidesBackButton = true
             })
         case .signUp:
             viewModel.signUp(email: credential,

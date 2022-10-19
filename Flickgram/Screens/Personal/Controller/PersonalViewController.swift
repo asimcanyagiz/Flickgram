@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PersonalViewController: UIViewController, AlertPresentable {
     
@@ -31,14 +32,6 @@ class PersonalViewController: UIViewController, AlertPresentable {
         
         title = "Profile"
         
-//        personalViewModel.fetchFavorites { error in
-//            if let error = error {
-//                self.showError(error)
-//            } else {
-//                self.reloadInputViews()
-//            }
-//        }
-        
         personalCollectionView.dataSource = self
         personalCollectionView.delegate = self
         
@@ -46,24 +39,48 @@ class PersonalViewController: UIViewController, AlertPresentable {
         
         personalCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
-       
-        
-//        personalViewModel.fetchPhotos()
-//
-//        personalViewModel.changeHandler = { change in
-//            switch change {
-//            case .didFetchPhotos:
-//                self.personalCollectionView.reloadData()
-//
-//            case .didErrorOccurred(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         personalCollectionView.reloadData()
+//        personalViewModel.fetchFavorites { error in
+//            if let error = error {
+//                self.showError(error)
+//            } else {
+//                self.reloadInputViews()
+//            }
+//        }
+//        personalCollectionView.dataSource = self
+//        personalCollectionView.delegate = self
+//
+//        let nib = UINib(nibName: "PersonalCollectionViewCell", bundle: nil)
+//
+//        personalCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
+
     }
     
+    
+    @IBAction func didLogOutPressed(_ sender: UIButton) {
+        
+        showAlert(title: "Warning",
+                  message: "Are you sure to sign out?",
+                  cancelButtonTitle: "Cancel") { _ in
+            do {
+                try Auth.auth().signOut()
+                self.navigationController?.popToRootViewController(animated: true)
+            } catch {
+                self.showError(error)
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func didSegmentedButtonPressed(_ sender: Any) {
+        
+        personalCollectionView.reloadData()
+        
+    }
     // MARK: - Methods
     private func fetchFavorites() {
         if isAnyCoinAddedToFavorites {
@@ -87,7 +104,7 @@ extension PersonalViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
         let scaleFactor = (screenWidth / 2) - 6
-
+        
         return CGSize(width: scaleFactor, height: scaleFactor)
     }
 }
@@ -110,15 +127,20 @@ extension PersonalViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PersonalCollectionViewCell
         
-//        guard let photo = personalViewModel.photoForIndexPath(indexPath) else {
-//            fatalError("Photo not found")
-//        }
-//
-//        cell.personalImageViewCell.kf.setImage(with: photo.iconUrl)
+        //        guard let photo = personalViewModel.photoForIndexPath(indexPath) else {
+        //            fatalError("Photo not found")
+        //        }
+        //
+        //        cell.personalImageViewCell.kf.setImage(with: photo.iconUrl)
         guard let photo = personalViewModel.coinForIndexPath(indexPath) else {
-                    fatalError("Photo not found")
-                }
+            fatalError("Photo not found")
+        }
         cell.personalImageViewCell.kf.setImage(with: URL(string: photo))
+        
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+        })
         return cell
     }
 }
