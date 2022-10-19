@@ -50,6 +50,8 @@
 		ABCE199A28FF35C60041EBE0 /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */; };
 		ABCE19A428FFCCF00041EBE0 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE19A228FFCCF00041EBE0 /* PersonalCollectionViewCell.swift */; };
 		ABCE19A528FFCCF00041EBE0 /* PersonalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABCE19A328FFCCF00041EBE0 /* PersonalCollectionViewCell.xib */; };
+		ABCE19A729002DCC0041EBE0 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABCE19A629002DCC0041EBE0 /* RemoteConfigDefaults.plist */; };
+		ABCE19AA290042440041EBE0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ABCE19A9290042440041EBE0 /* IQKeyboardManagerSwift */; };
 		ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,7 @@
 		ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConstants.swift; sourceTree = "<group>"; };
 		ABCE19A228FFCCF00041EBE0 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABCE19A328FFCCF00041EBE0 /* PersonalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABCE19A629002DCC0041EBE0 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,7 @@
 				AB3EFD3E28F9383F006DA177 /* Moya in Frameworks */,
 				ABC6F63128F8A1D70079F30A /* FirebaseFirestore in Frameworks */,
 				AB81507128FA936B00DCFCB4 /* Kingfisher in Frameworks */,
+				ABCE19AA290042440041EBE0 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 		ABC6F63428F8AE900079F30A /* Plists */ = {
 			isa = PBXGroup;
 			children = (
+				ABCE19A629002DCC0041EBE0 /* RemoteConfigDefaults.plist */,
 				ABC6F61F28F89F6A0079F30A /* Info.plist */,
 				ABC6F62B28F8A13B0079F30A /* GoogleService-Info.plist */,
 			);
@@ -470,6 +475,7 @@
 				ABC6F63228F8A1D70079F30A /* FirebaseRemoteConfig */,
 				AB3EFD3D28F9383F006DA177 /* Moya */,
 				AB81507028FA936B00DCFCB4 /* Kingfisher */,
+				ABCE19A9290042440041EBE0 /* IQKeyboardManagerSwift */,
 			);
 			productName = Flickgram;
 			productReference = ABC6F60B28F89F680079F30A /* Flickgram.app */;
@@ -503,6 +509,7 @@
 				ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AB3EFD3C28F9383F006DA177 /* XCRemoteSwiftPackageReference "Moya" */,
 				AB81506F28FA936A00DCFCB4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ABCE19A8290042440041EBE0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = ABC6F60C28F89F680079F30A /* Products */;
 			projectDirPath = "";
@@ -528,6 +535,7 @@
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
 				ABCE198E28FF304F0041EBE0 /* PersonalViewController.xib in Resources */,
 				AB6F8DCA28FC1E140082A209 /* SearchViewController.xib in Resources */,
+				ABCE19A729002DCC0041EBE0 /* RemoteConfigDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +820,14 @@
 				kind = branch;
 			};
 		};
+		ABCE19A8290042440041EBE0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -839,6 +855,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ABC6F62D28F8A1D70079F30A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		ABCE19A9290042440041EBE0 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABCE19A8290042440041EBE0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

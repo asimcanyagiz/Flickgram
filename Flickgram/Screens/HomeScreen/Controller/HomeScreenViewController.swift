@@ -95,6 +95,11 @@ extension HomeScreenViewController: UITableViewDataSource {
         cell.profilePicImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        cell.profilePicImageView.layer.masksToBounds = true
+        cell.profilePicImageView.layer.cornerRadius = cell.profilePicImageView.bounds.width / 2
+        
+        cell.ownerLabel.text = photo.ownername
+        
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedLikeButton(_:)), for: .touchUpInside)
         cell.saveButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedSaveButton(_:)), for: .touchUpInside)

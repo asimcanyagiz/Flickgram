@@ -26,7 +26,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x7u-C9-MBt">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="55.666666666666664"/>
-                                        <color key="backgroundColor" red="0.94117647410000005" green="0.94117647410000005" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.13725490870000001" green="0.2588235438" blue="0.3686274886" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="XCL-0Z-9Sx"/>
                                             <constraint firstAttribute="height" constant="50" id="ewp-BS-rSG"/>
@@ -106,6 +106,7 @@
             <connections>
                 <outlet property="iconImageView" destination="XTW-lw-gJ4" id="GWT-m6-69E"/>
                 <outlet property="likeButton" destination="bDT-vg-GXu" id="BA1-DG-Yc1"/>
+                <outlet property="ownerLabel" destination="zKJ-aW-cZh" id="T8O-dg-nkc"/>
                 <outlet property="profilePicImageView" destination="x7u-C9-MBt" id="Lx5-hg-Shp"/>
                 <outlet property="saveButton" destination="efa-9H-r9s" id="MNN-c7-cAi"/>
             </connections>
