@@ -48,8 +48,8 @@
 		ABCE199528FF35320041EBE0 /* FireBaseFireStoreAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199428FF35320041EBE0 /* FireBaseFireStoreAccessible.swift */; };
 		ABCE199728FF35920041EBE0 /* UserDefaultsAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199628FF35910041EBE0 /* UserDefaultsAccessible.swift */; };
 		ABCE199A28FF35C60041EBE0 /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */; };
-		ABCE19A028FF3A430041EBE0 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */; };
-		ABCE19A128FF3A430041EBE0 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */; };
+		ABCE19A428FFCCF00041EBE0 /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE19A228FFCCF00041EBE0 /* PersonalCollectionViewCell.swift */; };
+		ABCE19A528FFCCF00041EBE0 /* PersonalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABCE19A328FFCCF00041EBE0 /* PersonalCollectionViewCell.xib */; };
 		ABD7750128F99A9E00EEEB90 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +92,8 @@
 		ABCE199428FF35320041EBE0 /* FireBaseFireStoreAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFireStoreAccessible.swift; sourceTree = "<group>"; };
 		ABCE199628FF35910041EBE0 /* UserDefaultsAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccessible.swift; sourceTree = "<group>"; };
 		ABCE199928FF35C60041EBE0 /* UserDefaultConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConstants.swift; sourceTree = "<group>"; };
-		ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
-		ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		ABCE19A228FFCCF00041EBE0 /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABCE19A328FFCCF00041EBE0 /* PersonalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABD774FF28F99A9E00EEEB90 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -414,8 +414,8 @@
 		ABCE199B28FF3A110041EBE0 /* PhotoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ABCE199E28FF3A430041EBE0 /* PhotoTableViewCell.swift */,
-				ABCE199F28FF3A430041EBE0 /* PhotoTableViewCell.xib */,
+				ABCE19A228FFCCF00041EBE0 /* PersonalCollectionViewCell.swift */,
+				ABCE19A328FFCCF00041EBE0 /* PersonalCollectionViewCell.xib */,
 			);
 			path = PhotoTableViewCell;
 			sourceTree = "<group>";
@@ -520,9 +520,9 @@
 			files = (
 				ABC6F61E28F89F6A0079F30A /* LaunchScreen.storyboard in Resources */,
 				AB6F8DCE28FD9B040082A209 /* SearchScreenCollectionViewCell.xib in Resources */,
-				ABCE19A128FF3A430041EBE0 /* PhotoTableViewCell.xib in Resources */,
 				AB71112328F981A100F348B6 /* AuthViewController.xib in Resources */,
 				AB81505A28F99B3E00DCFCB4 /* HomeScreenViewController.xib in Resources */,
+				ABCE19A528FFCCF00041EBE0 /* PersonalCollectionViewCell.xib in Resources */,
 				AB81506B28FA84E700DCFCB4 /* PostsTableViewCell.xib in Resources */,
 				ABC6F62C28F8A13B0079F30A /* GoogleService-Info.plist in Resources */,
 				ABC6F61B28F89F6A0079F30A /* Assets.xcassets in Resources */,
@@ -548,7 +548,6 @@
 				ABCE199328FF35160041EBE0 /* CAViewModel.swift in Sources */,
 				ABCE199728FF35920041EBE0 /* UserDefaultsAccessible.swift in Sources */,
 				AB6F8DBA28FBE3050082A209 /* SearchPhotos.swift in Sources */,
-				ABCE19A028FF3A430041EBE0 /* PhotoTableViewCell.swift in Sources */,
 				ABCE199A28FF35C60041EBE0 /* UserDefaultConstants.swift in Sources */,
 				AB6F8DCD28FD9B040082A209 /* SearchScreenCollectionViewCell.swift in Sources */,
 				ABCE198028FF2AB30041EBE0 /* User.swift in Sources */,
@@ -564,6 +563,7 @@
 				ABCE199028FF305E0041EBE0 /* PersonalViewModel.swift in Sources */,
 				ABCE198328FF2C9D0041EBE0 /* AuthViewModel.swift in Sources */,
 				AB81506E28FA909500DCFCB4 /* HomeScreenViewModel.swift in Sources */,
+				ABCE19A428FFCCF00041EBE0 /* PersonalCollectionViewCell.swift in Sources */,
 				ABCE198D28FF304F0041EBE0 /* PersonalViewController.swift in Sources */,
 				AB6F8DBC28FBE3100082A209 /* SearchPhoto.swift in Sources */,
 				AB6F8DB128FBE0590082A209 /* SearchScreenView.swift in Sources */,

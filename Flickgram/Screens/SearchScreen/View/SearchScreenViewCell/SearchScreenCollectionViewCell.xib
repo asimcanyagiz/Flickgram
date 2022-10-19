@@ -23,6 +23,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kt9-hS-y0Y">
                                 <rect key="frame" x="0.0" y="0.0" width="237.33333333333334" height="178"/>
+                                <color key="backgroundColor" red="0.13441151379999999" green="0.26113039259999998" blue="0.36679121850000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kt9-hS-y0Y" secondAttribute="height" multiplier="4:3" id="BaO-qb-0L8"/>
                                 </constraints>

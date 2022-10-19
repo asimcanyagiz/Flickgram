@@ -36,6 +36,13 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
         viewModel.fetchPhotos()
+        viewModel.fetchFavorites { error in
+            if let error = error {
+                self.showError(error)
+            } else {
+                self.reloadInputViews()
+            }
+        }
         
         viewModel.changeHandler = { change in
             switch change {
@@ -46,7 +53,15 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
             }
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchFavorites { error in
+            if let error = error {
+                self.showError(error)
+            } else {
+                self.reloadInputViews()
+            }
+        }
+    }
     
 }
 
@@ -82,7 +97,10 @@ extension HomeScreenViewController: UITableViewDataSource {
         }
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedMapButton(_:)), for: .touchUpInside)
-        viewModel.addFavorite(cell.indexNumber)
+        DispatchQueue.main.async {
+            self.viewModel.addFavorite(cell.indexNumber)
+        }
+        
         
         return cell
     }

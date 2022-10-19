@@ -100,14 +100,13 @@ final class AuthViewController: UIViewController, AlertPresentable {
                 guard let self = self else { return }
                 
                 let homeScreenViewModel = HomeScreenViewModel()
-                let personalViewModel = PersonalViewModel()
                 let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
                 let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)
-                let personalViewController = PersonalViewController(viewModel: personalViewModel)
+                let personalViewController = PersonalViewController(personalViewModel: homeScreenViewModel)
                 
                 homeScreenViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
-                searchScreenViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
-                personalViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "house"), selectedImage: UIImage(named: "house"))
+                searchScreenViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "magnifyingglass.circle"), selectedImage: UIImage(named: "magnifyingglass"))
+                personalViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "person"), selectedImage: UIImage(named: "person"))
                 
                 let tabBarController = UITabBarController()
                 tabBarController.viewControllers = [homeScreenViewController, searchScreenViewController, personalViewController]

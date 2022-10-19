@@ -20,7 +20,7 @@ enum PhotosChanges {
     case didFetchPhotos
 }
 
-final class HomeScreenViewModel {
+final class HomeScreenViewModel: CAViewModel {
     
     weak var delegate: FavoritePhotoDelegate?
     
@@ -87,5 +87,46 @@ final class HomeScreenViewModel {
         ])
         
         delegate?.didPhotoAddedToFavorites?()
+    }
+    
+    
+    ///sadasdadasd
+    private var number = [String]()
+    
+    var personalNumberOfRows: Int {
+        number.count
+    }
+    
+    func coinForIndexPath(_ indexPath: IndexPath) -> String? {
+        number[indexPath.row]
+    }
+    
+    
+    func fetchFavorites(_ completion: @escaping (Error?) -> Void) {
+        
+        number = []
+        
+        guard let uid = uid else {
+            return
+        }
+        
+        db.collection("users").document(uid).getDocument() { (querySnapshot, err) in
+            guard let data = querySnapshot?.data() else {
+                return
+            }
+            let user = User(from: data)
+            print(user.favorites?.count)
+            
+            user.favorites?.forEach({
+                word in
+                if self.number.contains(word) {
+                    return
+                }
+                self.number.append(word)
+                
+            })
+            print(self.number)
+            print(self.number.count)
+        }
     }
 }
