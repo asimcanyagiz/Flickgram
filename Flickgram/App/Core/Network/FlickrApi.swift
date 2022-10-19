@@ -8,9 +8,11 @@
 import Foundation
 import Moya
 
+//Moya plugin and provider for help us to connect
 let plugin: PluginType = NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))
 let provider = MoyaProvider<FlickrApi>(plugins: [plugin])
 
+//Cases for different call methods
 enum FlickrApi {
     case recentPhotos
     case searchPhotos(text: String)
@@ -37,6 +39,7 @@ extension FlickrApi: TargetType {
     }
     
     var task: Moya.Task {
+        //With this two cases we can call recent photos or search photos
         switch self {
         case .recentPhotos:
             let parameters: [String: Any] = ["method" : "flickr.photos.getRecent",

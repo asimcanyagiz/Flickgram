@@ -12,6 +12,7 @@ final class AuthViewController: UIViewController, AlertPresentable {
     
     private let viewModel: AuthViewModel
     
+    //Cases for auth screen calls
     enum AuthType: String {
         case signIn = "Sign In"
         case signUp = "Sign Up"
@@ -53,10 +54,11 @@ final class AuthViewController: UIViewController, AlertPresentable {
     }
     
     
-    
+    //MARK: - View Loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Control the inputs for cases and catch the results
         viewModel.changeHandler = { change in
             switch change {
             case .didErrorOccurred(let error):
@@ -68,6 +70,7 @@ final class AuthViewController: UIViewController, AlertPresentable {
         
         title = "Auth"
         
+        //Catch the data for remoteconfig
         viewModel.fetchRemoteConfig { isSignUpDisabled in
             self.segmentedControl.isHidden = isSignUpDisabled
         }
@@ -75,7 +78,8 @@ final class AuthViewController: UIViewController, AlertPresentable {
     }
     
     
-    
+    //MARK: - Functions
+    //When you pressed segmented button title change
     @IBAction func didSegmentedButtonPressed(_ sender: UISegmentedControl) {
         
         let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
@@ -85,9 +89,10 @@ final class AuthViewController: UIViewController, AlertPresentable {
     
     
     
-    
+    //Input orianted functions with button
     @IBAction func didConfirmButtonPressed(_ sender: UIButton) {
         
+        //inputs
         guard let credential = emailTextField.text,
               let password = passwordTextField.text else {
             return
@@ -99,6 +104,8 @@ final class AuthViewController: UIViewController, AlertPresentable {
                              completion: { [weak self] in
                 guard let self = self else { return }
                 
+                //MARK: - Navigation/Tabbar connections
+                //With this area we create and push navigations when user sign in
                 let homeScreenViewModel = HomeScreenViewModel()
                 let homeScreenViewController = HomeScreenViewController(viewModel: homeScreenViewModel)
                 let searchScreenViewController = SearchViewController(searchViewModel: homeScreenViewModel)

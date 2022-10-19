@@ -9,6 +9,7 @@ import UIKit
 
 protocol AlertPresentable { }
 
+//With this protocol we can manage speacial alerts
 extension AlertPresentable where Self: UIViewController {
     func showAlert(title: String? = nil,
                    message: String? = nil,

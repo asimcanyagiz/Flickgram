@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
+//Firebase protocols
 protocol FireBaseFireStoreAccessible {}
 
 extension FireBaseFireStoreAccessible {

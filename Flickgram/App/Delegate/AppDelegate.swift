@@ -21,22 +21,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupFirebase()
         setupWindow()
         
-        
+        //MARK: - IQKEYBOARD ADAPTION
+        //This are for use IQKeyboardManager
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        //MARK: - UTABBAR COLOR
+        //This are for change tint color of tabbar
         UITabBar.appearance().tintColor = UIColor.black
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.normal)
         
         return true
     }
-    
+    //MARK: - Firebase Setup
+    //Firebase Configration
     private func setupFirebase() {
         FirebaseApp.configure()
         
         _ = Firestore.firestore()
     }
     
+    //MARK: - Setup Window
+    //This area for welcome screen when app did finis launching
     private func setupWindow() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let viewModel = AuthViewModel()

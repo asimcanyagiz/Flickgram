@@ -15,6 +15,7 @@ protocol FavoritePhotoDelegate: AnyObject {
     @objc optional func didPhotoAddedToFavorites()
 }
 
+//Cases for change photos
 enum PhotosChanges {
     case didErrorOccurred(_ error: Error)
     case didFetchPhotos
@@ -22,6 +23,7 @@ enum PhotosChanges {
 
 final class HomeScreenViewModel: CAViewModel {
     
+    //Basic firebase connections
     weak var delegate: FavoritePhotoDelegate?
     
     private let db = Firestore.firestore()
@@ -36,10 +38,13 @@ final class HomeScreenViewModel: CAViewModel {
     
     var changeHandler: ((PhotosChanges) -> Void)?
     
+    
     var numberOfRows: Int {
         photosResponse?.photos?.photo?.count ?? .zero
     }
     
+    //MARK: - Functions
+    //Fetch the photos from api
     func fetchPhotos() {
         provider.request(.recentPhotos) { result in
             switch result {
@@ -56,6 +61,7 @@ final class HomeScreenViewModel: CAViewModel {
         }
     }
     
+    //Search the photos from api
     func searchPhotos(searchText: String) {
         provider.request(.searchPhotos(text: searchText)) { result in
             switch result {
@@ -72,10 +78,12 @@ final class HomeScreenViewModel: CAViewModel {
         }
     }
     
+    //Call the current photo
     func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
         photosResponse?.photos?.photo?[indexPath.row]
     }
     
+    //Add the favorite photo url from indexnumber
     func addFavorite(_ number: Int) {
         guard let id = photosResponse?.photos?.photo?[number].iconUrl.absoluteString,
               let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
@@ -90,18 +98,17 @@ final class HomeScreenViewModel: CAViewModel {
     }
     
     
-    ///sadasdadasd
     private var number = [String]()
     
     var personalNumberOfRows: Int {
         number.count
     }
     
-    func coinForIndexPath(_ indexPath: IndexPath) -> String? {
+    func photosForIndexPaths(_ indexPath: IndexPath) -> String? {
         number[indexPath.row]
     }
     
-    
+    //Function for fetch favorite photo urls from firebase
     func fetchFavorites(_ completion: @escaping (Error?) -> Void) {
         
         number = []

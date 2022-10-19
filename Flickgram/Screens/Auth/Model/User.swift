@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Model for create user and save datas for firebase
 struct User: Encodable {
     let username: String?
     let email: String?

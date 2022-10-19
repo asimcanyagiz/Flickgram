@@ -8,5 +8,6 @@
 import Foundation
 
 enum UserDefaultConstants: String {
+    //Firebase connection with user id
     case uid
 }

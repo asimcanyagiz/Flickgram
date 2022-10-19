@@ -10,19 +10,21 @@ import FirebaseAuth
 import FirebaseRemoteConfig
 import FirebaseFirestore
 
+//Cases for connect with firebase
 enum AuthViewModelChange {
     case didErrorOccurred(_ error: Error)
     case didSignUpSuccessful
 }
 
 final class AuthViewModel {
-    
+    //Basic firebase setups
     private let db = Firestore.firestore()
     
     private let defaults = UserDefaults.standard
     
     var changeHandler: ((AuthViewModelChange) -> Void)?
     
+    //Function for signup
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
@@ -30,6 +32,7 @@ final class AuthViewModel {
                 return
             }
             
+            //We create a User with User Model
             let user = User(username: authResult?.user.displayName,
                             email: authResult?.user.email,
                             pp: "",
@@ -55,7 +58,7 @@ final class AuthViewModel {
             }
         }
     }
-    
+    //Sign up function
     func signIn(email: String,
                 password: String,
                 completion: @escaping () -> Void) {
@@ -74,7 +77,8 @@ final class AuthViewModel {
             completion()
         }
     }
-    
+    //MARK: - Remote Config Area
+    //basic remote config setups, firebase this functions check value false or true
     func fetchRemoteConfig(completion: @escaping (Bool) -> Void) {
         let remoteConfig = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()

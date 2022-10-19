@@ -13,7 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    
+    //MARK: - Init View Model
     init(searchViewModel: HomeScreenViewModel){
         self.searchViewModel = searchViewModel
         super.init(nibName: nil, bundle: nil)
@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
     }
     
     
-    
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class SearchViewController: UIViewController {
         title = "Search"
         self.parent?.title = "Search"
         
+        //collection delegates
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -39,7 +40,7 @@ class SearchViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
         
-        
+        //For catch Photos and update cells
         searchViewModel.fetchPhotos()
         
         searchViewModel.changeHandler = { change in
@@ -52,6 +53,7 @@ class SearchViewController: UIViewController {
             }
         }
         
+        //SearchBar adaption
         let searchBar:UISearchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.prominent
         searchBar.placeholder = " Search..."
@@ -64,8 +66,11 @@ class SearchViewController: UIViewController {
     }
     
 }
+
+//MARK: - Delegates
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Cell sizes
         let screenWidth = UIScreen.main.bounds.width
         let scaleFactor = (screenWidth / 2) - 6
 
@@ -94,6 +99,7 @@ extension SearchViewController: UICollectionViewDataSource {
             fatalError("Photo not found")
         }
         
+        //Catch photos with kingfisher
         cell.imageViewCell.kf.setImage(with: photo.iconUrl)
         return cell
     }

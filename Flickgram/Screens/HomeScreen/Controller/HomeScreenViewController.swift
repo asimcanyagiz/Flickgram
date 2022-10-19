@@ -23,7 +23,7 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Lifecycle
+    // MARK: - View Loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +36,7 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
         let nib = UINib(nibName: "PostsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
+        //Fetch photos from api and firebase
         viewModel.fetchPhotos()
         viewModel.fetchFavorites { error in
             if let error = error {
@@ -44,7 +45,7 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
                 self.reloadInputViews()
             }
         }
-        
+        //Catch the result
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchPhotos:
@@ -55,6 +56,7 @@ final class HomeScreenViewController: UIViewController, AlertPresentable {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        //Fetch the photo from firebase
         viewModel.fetchFavorites { error in
             if let error = error {
                 self.showError(error)
@@ -84,23 +86,20 @@ extension HomeScreenViewController: UITableViewDataSource {
             fatalError("photos not found.")
         }
         
-        //        cell.title = photo.title
-        //        cell.price = photo.owner
-        //        cell.imageView?.kf.setImage(with: photo.iconUrl) { _ in
-        //            tableView.reloadRows(at: [indexPath], with: .automatic)
-        //        }
-        
+        //Catch photos with Kingfisher
         cell.iconImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         cell.profilePicImageView.kf.setImage(with: photo.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        //Make circle the profile image
         cell.profilePicImageView.layer.masksToBounds = true
         cell.profilePicImageView.layer.cornerRadius = cell.profilePicImageView.bounds.width / 2
         
         cell.ownerLabel.text = photo.ownername
         
+        //Add target to buttons for connect cells
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedLikeButton(_:)), for: .touchUpInside)
         cell.saveButton.addTarget(self, action: #selector(HomeScreenViewController.onClickedSaveButton(_:)), for: .touchUpInside)
@@ -108,7 +107,7 @@ extension HomeScreenViewController: UITableViewDataSource {
         
         return cell
     }
-    
+    //Functions for alert the user
     @objc func onClickedLikeButton(_ sender: Any?) {
         showAlert(title: "Success!", message: "Your choice will be added your favorites after the security progress, don't forget to check", cancelButtonTitle: nil)
         

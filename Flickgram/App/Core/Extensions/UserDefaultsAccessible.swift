@@ -9,6 +9,7 @@ import Foundation
 
 protocol UserDefaultsAccessible {}
 
+//We create speacial variables for connection firebase
 extension UserDefaultsAccessible {
     var defaults: UserDefaults {
         UserDefaults.standard

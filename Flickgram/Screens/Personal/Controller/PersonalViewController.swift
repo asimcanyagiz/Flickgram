@@ -12,12 +12,10 @@ class PersonalViewController: UIViewController, AlertPresentable {
     
     private let personalViewModel: HomeScreenViewModel
     
-    private var isAnyCoinAddedToFavorites: Bool = true
-    
     
     @IBOutlet weak var personalCollectionView: UICollectionView!
     
-    // MARK: - Init
+    // MARK: - Init View model
     init(personalViewModel: HomeScreenViewModel){
         self.personalViewModel = personalViewModel
         super.init(nibName: nil, bundle: nil)
@@ -26,13 +24,15 @@ class PersonalViewController: UIViewController, AlertPresentable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //MARK: - View Loads
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Navigation Bar control
         title = "Profile"
         self.parent?.title = "Profile"
         
+        //Connect collection view extensions
         personalCollectionView.dataSource = self
         personalCollectionView.delegate = self
         
@@ -41,26 +41,14 @@ class PersonalViewController: UIViewController, AlertPresentable {
         personalCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         personalCollectionView.reloadData()
-//        personalViewModel.fetchFavorites { error in
-//            if let error = error {
-//                self.showError(error)
-//            } else {
-//                self.reloadInputViews()
-//            }
-//        }
-//        personalCollectionView.dataSource = self
-//        personalCollectionView.delegate = self
-//
-//        let nib = UINib(nibName: "PersonalCollectionViewCell", bundle: nil)
-//
-//        personalCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
 
     }
-    
-    
+    //MARK: - Functions
+    //Functions for go to Auth Screen and sign out from Firebase
     @IBAction func didLogOutPressed(_ sender: UIButton) {
         
         showAlert(title: "Warning",
@@ -77,32 +65,18 @@ class PersonalViewController: UIViewController, AlertPresentable {
     }
     
     
+    //Segmented Button control
     @IBAction func didSegmentedButtonPressed(_ sender: Any) {
         
         personalCollectionView.reloadData()
         
     }
-    // MARK: - Methods
-    private func fetchFavorites() {
-        if isAnyCoinAddedToFavorites {
-            isAnyCoinAddedToFavorites = false
-            personalViewModel.fetchFavorites { error in
-                if let error = error {
-                    self.showError(error)
-                } else {
-                    self.reloadInputViews()
-                }
-            }
-        }
-    }
-    
-    @objc private func didAnyCoinAddedToFavorites() {
-        isAnyCoinAddedToFavorites = true
-    }
 }
 
+//MARK: - Delegates
 extension PersonalViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //This are for design cell sizes
         let screenWidth = UIScreen.main.bounds.width
         let scaleFactor = (screenWidth / 2) - 6
         
@@ -127,17 +101,13 @@ extension PersonalViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PersonalCollectionViewCell
-        
-        //        guard let photo = personalViewModel.photoForIndexPath(indexPath) else {
-        //            fatalError("Photo not found")
-        //        }
-        //
-        //        cell.personalImageViewCell.kf.setImage(with: photo.iconUrl)
-        guard let photo = personalViewModel.coinForIndexPath(indexPath) else {
+
+        guard let photo = personalViewModel.photosForIndexPaths(indexPath) else {
             fatalError("Photo not found")
         }
         cell.personalImageViewCell.kf.setImage(with: URL(string: photo))
         
+        //Animate cells when they will appear or reload data
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         UIView.animate(withDuration: 0.25, animations: {
             cell.layer.transform = CATransform3DMakeScale(1,1,1)
