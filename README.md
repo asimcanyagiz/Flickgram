@@ -45,13 +45,21 @@
 
 To clone and run this application, you'll need [Git](https://git-scm.com) installed on your computer. From your command line:
 
-```bash
-# Clone this repository
-$ git clone https://github.com/asimcanyagiz/Flickgram
-
-# Go into the repository
-- open Flickgram with xCode
-```
+==========================================================================================
+ ```bash
+ # Clone this repository
+ $ git clone https://github.com/232-Pazarama-iOS-Swift-Bootcamp/week4_hw4-asimcanyagiz
+ ```
+ # Go into the repository
+ - open Flickgram with xCode
+ 
+ # Go into xCode
+ - File > Packages > Reset Package Caches
+ 
+ # Go into xCode
+ - Wait till spm files builded. After than push cmd + r
+ 
+==========================================================================================
 
 
 ## Download
