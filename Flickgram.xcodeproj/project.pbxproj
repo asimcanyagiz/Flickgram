@@ -816,8 +816,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 		ABCE19A8290042440041EBE0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
